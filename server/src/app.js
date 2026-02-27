@@ -1,6 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import routes from "./routes/index.js";
+import { errorMiddleware } from "./middleware/error.middleware.js";
 
 const app = express();
 
@@ -17,5 +18,8 @@ app.get("/health", (req, res) => {
 
 // API Routes
 app.use("/api", routes);
+
+// Error Handling Middleware
+app.use(errorMiddleware);
 
 export default app;
