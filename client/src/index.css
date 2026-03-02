@@ -1,5 +1,9 @@
-@import "tailwind" @theme {
+@import "tailwindcss";
+
+@theme {
   --font-sans: "Roboto", sans-serif;
 }
 
-@utility grid;
+@utility grid-cols-70\/30 {
+  grid-template-columns: 70% 28%;
+}
